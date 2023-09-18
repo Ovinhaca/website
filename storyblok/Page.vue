@@ -1,13 +1,19 @@
 <script setup lang="ts">
-defineProps({ blok: Object });
+import type { PageStoryblok } from "../component-types-sb";
+
+type Props = {
+  blok: PageStoryblok;
+};
+
+const props = defineProps<Props>();
 </script>
 
 <template>
-  <div v-editable="blok" class="px-4">
+  <div v-editable="props.blok" class="px-4">
     <StoryblokComponent
-      v-for="blok in blok.body"
-      :key="blok._uid"
-      :blok="blok"
+      v-for="section in props.blok?.body"
+      :key="section._uid"
+      :blok="section"
     />
   </div>
 </template>
