@@ -14,7 +14,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Use Node.js 18.x
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
           node-version: "18.x"
           cache: "npm"
@@ -28,28 +28,34 @@ jobs:
           npm --version
           npx commitlint --version
 
-    if: github.event_name == 'push'
-    steps:
       - name: Validate current commit (last commit) with commitlint
+        if: github.event_name == 'push'
         run: npx commitlint --from HEAD~1 --to HEAD --verbose
 
-    if: github.event_name == 'pull_request'
-    steps:
       - name: Validate PR commits with commitlint
+        if: github.event_name == 'pull_request'
         run: npx commitlint --from ${{ github.event.pull_request.head.sha }}~${{ github.event.pull_request.commits }} --to ${{ github.event.pull_request.head.sha }} --verbose
+
       - name: Build site
+        if: github.event_name == 'pull_request'
         run: |
           npm run build
+
       - name: Lint site
+        if: github.event_name == 'pull_request'
         run: |
           npm run lint
+
       - name: Waiting for 200 from the Netlify Preview
+        if: github.event_name == 'pull_request'
         uses: jakepartusch/wait-for-netlify-action@v1.4
         id: waitFor200
         with:
           site_name: "ovinhaca"
           max_timeout: 60
+
       - name: Audit URLs using Lighthouse
+        if: github.event_name == 'pull_request'
         uses: treosh/lighthouse-ci-action@v10
         with:
           urls: |
