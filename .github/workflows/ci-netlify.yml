@@ -46,20 +46,7 @@ jobs:
         run: |
           npm run lint
 
-      - name: Waiting for 200 from the Netlify Preview
+      - name: Check types
         if: github.event_name == 'pull_request'
-        uses: jakepartusch/wait-for-netlify-action@v1.4
-        id: waitFor200
-        with:
-          site_name: "ovinhaca"
-          max_timeout: 60
-
-      - name: Audit URLs using Lighthouse
-        if: github.event_name == 'pull_request'
-        uses: treosh/lighthouse-ci-action@v10
-        with:
-          urls: |
-            ${{ steps.waitFor200.outputs.url }}
-          budgetPath: ./budget.json
-          uploadArtifacts: true
-          temporaryPublicStorage: true
+        run: |
+          npx nuxi typecheck
