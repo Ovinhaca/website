@@ -25,3 +25,7 @@ logs
 
 # Certs
 *.pem
+
+# Caches
+.eslintcache
+.stylelintcache

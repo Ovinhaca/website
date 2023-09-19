@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     "@nuxtjs/tailwindcss",
   ],
   typescript: {
-    strict: true,
+    typeCheck: true,
   },
   devtools: { enabled: true },
 });
