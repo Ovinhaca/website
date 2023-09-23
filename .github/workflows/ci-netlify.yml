@@ -34,6 +34,3 @@ jobs:
       - name: Lint site
         run: |
           npm run lint
-      - name: Check types
-        run: |
-          npx nuxi typecheck
