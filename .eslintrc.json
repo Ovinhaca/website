@@ -61,7 +61,15 @@
     "vue/multi-word-component-names": [
       "error",
       {
-        "ignores": ["[...slug]", "default", "Feature", "Grid", "Page", "Teaser"]
+        "ignores": [
+          "[...slug]",
+          "default",
+          "Feature",
+          "Grid",
+          "Hero",
+          "Page",
+          "Teaser"
+        ]
       }
     ]
   }
