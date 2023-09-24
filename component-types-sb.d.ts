@@ -7,7 +7,19 @@ export interface ConfigStoryblok {
   [k: string]: any;
 }
 
+export interface AssetStoryblok {
+  alt?: string;
+  copyright?: string;
+  id: number;
+  filename: string;
+  name: string;
+  title?: string;
+  focus?: string;
+  [k: string]: any;
+}
+
 export interface FeatureStoryblok {
+  image?: AssetStoryblok;
   name?: string;
   _uid: string;
   component: "feature";
