@@ -33,6 +33,16 @@ export interface GridStoryblok {
   [k: string]: any;
 }
 
+export interface HeroStoryblok {
+  headline?: string;
+  subheadline?: string;
+  background_image?: AssetStoryblok;
+  single_option?: "constrained" | "full-width";
+  _uid: string;
+  component: "hero";
+  [k: string]: any;
+}
+
 export type MultilinkStoryblok =
   | {
       cached_url?: string;
