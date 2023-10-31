@@ -20,7 +20,7 @@ const props = defineProps<Props>();
         <h3 class="text-6xl font-bold uppercase tracking-wide mb-6">
           {{ props.blok.headline }}
         </h3>
-        <p class="prose lg:prose-xl text-neutral-500 max-w-[60ch]">
+        <p class="prose text-neutral-500 max-w-[60ch]">
           {{ props.blok.copy }}
         </p>
       </div>
