@@ -1,4 +1,6 @@
+import typography from "@tailwindcss/typography";
 import type { Config } from "tailwindcss";
+import defaultTheme from "tailwindcss/defaultTheme";
 
 export default {
   content: [
@@ -7,7 +9,11 @@ export default {
     "pages/**/*.vue",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['"Inter var"', ...defaultTheme.fontFamily.sans],
+      },
+    },
   },
-  plugins: [],
+  plugins: [typography],
 } satisfies Config;

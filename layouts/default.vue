@@ -1,6 +1,7 @@
 <template>
-  <main>
+  <div class="relative min-h-screen">
     <SbHeader />
     <slot />
-  </main>
+    <SbFooter />
+  </div>
 </template>
