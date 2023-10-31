@@ -9,10 +9,28 @@ const props = defineProps<Props>();
 </script>
 
 <template>
-  <div
-    v-editable="props.blok"
-    class="py-32 text-6xl text-[#50b0ae] font-bold text-center"
-  >
-    {{ props.blok.headline }}
-  </div>
+  <section v-editable="props.blok" class="text-neutral-800">
+    <div
+      class="container mx-auto grid md:grid-cols-2 gap-12 place-items-center"
+    >
+      <div>
+        <span class="text-3xl text-orange-600 leading-tight">
+          {{ props.blok.subheadline }}
+        </span>
+        <h3 class="text-6xl font-bold uppercase tracking-wide mb-6">
+          {{ props.blok.headline }}
+        </h3>
+        <p class="prose lg:prose-xl text-neutral-500 max-w-[60ch]">
+          {{ props.blok.copy }}
+        </p>
+      </div>
+      <div>
+        <img
+          :src="`${props.blok.image?.filename}/m/500x0`"
+          :alt="props.blok.background_image?.alt"
+          class="w-full rounded-md h-48 xl:h-96 object-cover shadow-md border-2 border-neutral-200"
+        />
+      </div>
+    </div>
+  </section>
 </template>
