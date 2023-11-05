@@ -11,6 +11,7 @@ export default defineNuxtConfig({
       },
     ],
     "@nuxtjs/tailwindcss",
+    "@vueuse/nuxt",
   ],
   typescript: {
     typeCheck: true,
