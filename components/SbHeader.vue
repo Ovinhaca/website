@@ -31,14 +31,12 @@ const mobileMenuOpen = ref(false);
 </script>
 
 <template>
-  <header class="-m-px sticky inset-x-0 top-0 z-50 border-t-4 border-amber-700">
+  <header
+    class="-mt-px sticky inset-x-0 top-0 z-50 border-t-4 border-amber-600 h-[92px]"
+  >
     <nav
       class="flex items-center justify-between p-6 lg:px-8 transition-colors"
-      :class="[
-        isStuck
-          ? 'bg-neutral-50/75 shadow-md'
-          : 'bg-gradient-to-b from-neutral-600/70 via-neutral-600/50 to-transparent',
-      ]"
+      :class="[isStuck ? 'bg-neutral-50/95 shadow-md' : '']"
       aria-label="Global"
     >
       <div class="flex lg:flex-1">
@@ -62,7 +60,7 @@ const mobileMenuOpen = ref(false);
         <li v-for="blok in headerMenu" :key="blok._uid">
           <NuxtLink
             :to="`/${blok.link?.cached_url}`"
-            class="text-sm font-semibold leading-6"
+            class="text-sm font-semibold leading-6 hover:text-amber-500"
             :class="[isStuck ? 'text-neutral-800' : 'text-white']"
           >
             {{ blok.link?.story.name }}
@@ -141,6 +139,6 @@ const mobileMenuOpen = ref(false);
 
 <style scoped>
 nav a.router-link-active {
-  @apply underline underline-offset-4 decoration-4 decoration-orange-600;
+  @apply underline underline-offset-4 decoration-4 decoration-amber-500;
 }
 </style>
