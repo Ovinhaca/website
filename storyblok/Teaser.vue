@@ -9,12 +9,12 @@ const props = defineProps<Props>();
 </script>
 
 <template>
-  <section v-editable="props.blok" class="text-neutral-800">
+  <SbSection v-editable="props.blok" class="text-neutral-800">
     <div
       class="container mx-auto grid md:grid-cols-2 gap-12 place-items-center"
     >
       <div>
-        <span class="text-3xl text-orange-600 leading-tight">
+        <span class="text-3xl text-amber-600 leading-tight">
           {{ props.blok.subheadline }}
         </span>
         <h3 class="text-6xl font-bold uppercase tracking-wide mb-6">
@@ -32,5 +32,5 @@ const props = defineProps<Props>();
         />
       </div>
     </div>
-  </section>
+  </SbSection>
 </template>
