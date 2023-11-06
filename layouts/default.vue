@@ -8,7 +8,9 @@ useIntersectionObserver(sentinel, ([{ isIntersecting }]) => {
 </script>
 
 <template>
-  <div class="relative mx-auto max-w-screen-2xl min-h-screen">
+  <div
+    class="bg-white ring-1 ring-neutral-100 relative mx-auto max-w-screen-2xl min-h-screen"
+  >
     <div ref="sentinel" class="h-px"></div>
     <SbHeader />
     <slot />

@@ -1,7 +1,11 @@
+<script setup lang="ts">
+const currentYear = useDateFormat(useNow(), "YYYY");
+</script>
+
 <template>
-  <footer class="pt-32 sm:pt-56">
+  <footer class="mt-32 sm:mt-56 bg-neutral-800 text-white">
     <SbSection as="div">
-      <div class="px-12 py-6 text-white bg-orange-600">Footer</div>
+      <div class="py-6 font-bold">© {{ currentYear }} O Vinhaça</div>
     </SbSection>
   </footer>
 </template>
