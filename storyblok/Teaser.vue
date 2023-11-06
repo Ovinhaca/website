@@ -9,7 +9,7 @@ const props = defineProps<Props>();
 </script>
 
 <template>
-  <SbSection v-editable="props.blok" class="text-neutral-800">
+  <SbSection v-editable="props.blok" maxw="5xl" class="text-neutral-800">
     <div
       class="container mx-auto grid md:grid-cols-2 gap-12 place-items-center"
     >
@@ -24,7 +24,7 @@ const props = defineProps<Props>();
           {{ props.blok.copy }}
         </p>
       </div>
-      <div>
+      <div v-if="props.blok.image?.filename">
         <img
           :src="`${props.blok.image?.filename}/m/500x0`"
           :alt="props.blok.background_image?.alt"
