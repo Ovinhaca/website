@@ -11,7 +11,10 @@ const props = defineProps<Props>();
 <template>
   <SbSection v-editable="props.blok" maxw="5xl" class="text-neutral-800">
     <div
-      class="container mx-auto grid md:grid-cols-2 gap-12 place-items-center"
+      class="container mx-auto grid gap-12 place-items-center"
+      :class="[
+        props.blok.image?.filename ? 'md:grid-cols-2' : 'md:grid-cols-1',
+      ]"
     >
       <div>
         <span class="text-3xl text-amber-600 leading-tight">
