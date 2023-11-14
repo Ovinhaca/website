@@ -11,15 +11,19 @@ const props = defineProps<Props>();
 <template>
   <section
     v-editable="props.blok"
-    class="relative -mt-[92px] min-h-screen isolate overflow-hidden bg-neutral-900 pb-16 pt-14 sm:pb-20"
+    class="flex flex-col justify-center relative isolate overflow-hidden bg-neutral-900 pb-16 pt-14 sm:pb-20"
+    :class="[props.blok.layout === 'full-height' ? 'min-h-screen' : 'h-96']"
   >
     <img
       :src="`${props.blok.background_image?.filename}/m/1536x0`"
       :alt="props.blok.background_image?.alt"
-      class="absolute inset-0 -z-10 h-full w-full object-cover"
+      class="absolute inset-0 -z-10 h-full w-full object-cover object-top"
     />
     <SbSection as="div">
-      <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+      <div
+        v-if="props.blok.layout === 'full-height'"
+        class="mx-auto max-w-2xl py-32"
+      >
         <div class="hidden sm:mb-8 sm:flex sm:justify-center">
           <div
             class="relative rounded-full px-3 py-1 text-sm leading-6 text-neutral-400 ring-1 ring-white/10 hover:ring-white/20"
@@ -51,6 +55,17 @@ const props = defineProps<Props>();
           >
             Book a table
           </NuxtLink>
+        </div>
+      </div>
+      <div v-else class="mx-auto max-w-2xl">
+        <div class="flex flex-col gap-y-10 items-center text-white">
+          <div class="flex flex-col items-center">
+            <h1
+              class="text-4xl font-bold leading-tight tracking-tight sm:text-6xl"
+            >
+              {{ props.blok.headline }}
+            </h1>
+          </div>
         </div>
       </div>
     </SbSection>
