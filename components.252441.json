@@ -33,7 +33,7 @@
       "name": "feature",
       "display_name": null,
       "created_at": "2023-09-17T21:43:45.850Z",
-      "updated_at": "2023-09-24T12:49:06.323Z",
+      "updated_at": "2023-10-31T20:51:35.559Z",
       "id": 4586471,
       "schema": {
         "image": {
@@ -47,6 +47,9 @@
         },
         "name": {
           "type": "text"
+        },
+        "copy": {
+          "type": "textarea"
         }
       },
       "image": null,
@@ -65,11 +68,53 @@
       "name": "grid",
       "display_name": null,
       "created_at": "2023-09-17T21:43:45.835Z",
-      "updated_at": "2023-09-17T21:43:45.835Z",
+      "updated_at": "2023-11-19T20:21:30.155Z",
       "id": 4586470,
       "schema": {
+        "headline": {
+          "type": "text",
+          "pos": 0
+        },
         "columns": {
-          "type": "bloks"
+          "type": "bloks",
+          "pos": 1
+        },
+        "headline_rank": {
+          "type": "option",
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "6ef0405d-2e2d-41df-80e0-2353b18703fc",
+              "name": "h1",
+              "value": "h1"
+            },
+            {
+              "_uid": "7317a54c-2bdf-4d80-83f5-14628e99d8d6",
+              "value": "h2",
+              "name": "h2"
+            },
+            {
+              "_uid": "c482879c-d56c-4e72-9050-fffa78e0d43c",
+              "value": "h3",
+              "name": "h3"
+            },
+            {
+              "_uid": "78bd4484-4faf-4f1d-a7d2-e99a861c58ff",
+              "value": "h4",
+              "name": "h4"
+            },
+            {
+              "_uid": "64bc161e-5e8d-4a33-b1da-df339b534141",
+              "value": "h5",
+              "name": "h5"
+            },
+            {
+              "_uid": "e377b9c2-d34b-4412-8deb-7db8b965c286",
+              "value": "h6",
+              "name": "h6"
+            }
+          ],
+          "default_value": "h3"
         }
       },
       "image": null,
@@ -88,19 +133,25 @@
       "name": "hero",
       "display_name": null,
       "created_at": "2023-09-24T13:35:55.120Z",
-      "updated_at": "2023-09-24T13:41:55.356Z",
+      "updated_at": "2023-11-14T20:00:00.515Z",
       "id": 4618934,
       "schema": {
         "headline": {
-          "type": "text"
+          "type": "text",
+          "key": "headline",
+          "pos": 0
         },
         "subheadline": {
-          "type": "text"
+          "type": "text",
+          "key": "subheadline",
+          "pos": 1
         },
         "background_image": {
-          "type": "asset"
+          "type": "asset",
+          "key": "background_image",
+          "pos": 2
         },
-        "single_option": {
+        "layout": {
           "type": "option",
           "use_uuid": true,
           "options": [
@@ -111,12 +162,14 @@
             },
             {
               "_uid": "564667c7-5973-4c95-b415-65996f6607ce",
-              "value": "full-width",
+              "value": "full-height",
               "name": "Full width"
             }
           ],
           "exclude_empty_option": true,
-          "default_value": "constrained"
+          "default_value": "constrained",
+          "key": "single_option",
+          "pos": 3
         }
       },
       "image": null,
@@ -127,6 +180,111 @@
       "all_presets": [],
       "preset_id": null,
       "real_name": "hero",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
+      "name": "menu",
+      "display_name": null,
+      "created_at": "2023-11-19T20:39:13.902Z",
+      "updated_at": "2023-11-20T20:51:56.949Z",
+      "id": 4905296,
+      "schema": {
+        "headline": {
+          "type": "text",
+          "pos": 0,
+          "key": "headline"
+        },
+        "menu_items": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "menu_item"
+          ],
+          "pos": 1,
+          "key": "Items",
+          "display_name": "Menu Items"
+        },
+        "headline_rank": {
+          "type": "option",
+          "use_uuid": true,
+          "default_value": "h3",
+          "options": [
+            {
+              "_uid": "2366d0e8-3e81-4a2b-9299-1c48aef2e4b7",
+              "name": "h1",
+              "value": "h1"
+            },
+            {
+              "_uid": "b1841e53-ab13-4558-b636-888c44c2df32",
+              "value": "h2",
+              "name": "h2"
+            },
+            {
+              "_uid": "f9ea0a8d-32ec-4f26-a6e0-40b3a6e829cb",
+              "value": "h3",
+              "name": "h3"
+            },
+            {
+              "_uid": "ca514b3d-29f7-4313-a223-77e6fb02f5e3",
+              "value": "h4",
+              "name": "h4"
+            },
+            {
+              "_uid": "b8557f67-2b30-4901-9d0f-10432937d328",
+              "value": "h5",
+              "name": "h5"
+            },
+            {
+              "_uid": "b4e1ae12-a3ca-421a-a23f-dc237cac137a",
+              "value": "h6",
+              "name": "h6"
+            }
+          ],
+          "key": "headline_rank",
+          "pos": 2
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "menu",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
+      "name": "menu_item",
+      "display_name": null,
+      "created_at": "2023-11-20T20:18:26.786Z",
+      "updated_at": "2023-11-20T20:21:27.763Z",
+      "id": 4911401,
+      "schema": {
+        "name": {
+          "type": "text"
+        },
+        "price": {
+          "type": "number",
+          "decimals": 2
+        },
+        "description": {
+          "type": "textarea"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "menu_item",
       "component_group_uuid": null,
       "color": null,
       "icon": null
@@ -182,11 +340,27 @@
       "name": "teaser",
       "display_name": null,
       "created_at": "2023-09-17T21:43:45.818Z",
-      "updated_at": "2023-09-17T21:43:45.818Z",
+      "updated_at": "2023-10-31T19:34:16.346Z",
       "id": 4586469,
       "schema": {
+        "subheadline": {
+          "type": "text",
+          "pos": 0
+        },
         "headline": {
-          "type": "text"
+          "type": "text",
+          "pos": 1
+        },
+        "copy": {
+          "type": "textarea",
+          "pos": 2
+        },
+        "image": {
+          "type": "asset",
+          "filetypes": [
+            "images"
+          ],
+          "pos": 3
         }
       },
       "image": null,
