@@ -13,7 +13,7 @@ const props = withDefaults(defineProps<TProps>(), {
 <template>
   <component
     :is="props.as"
-    class="mx-auto px-6 lg:px-8"
+    class="mx-auto px-6 lg:px-8 w-full"
     :class="[props.maxw === '7xl' ? 'max-w-7xl' : 'max-w-5xl']"
   >
     <slot />

@@ -21,13 +21,26 @@ export interface AssetStoryblok {
 export interface FeatureStoryblok {
   image?: AssetStoryblok;
   name?: string;
+  copy?: string;
   _uid: string;
   component: "feature";
   [k: string]: any;
 }
 
 export interface GridStoryblok {
-  columns?: any[];
+  headline?: string;
+  columns?: (
+    | ConfigStoryblok
+    | FeatureStoryblok
+    | GridStoryblok
+    | HeroStoryblok
+    | MenuStoryblok
+    | MenuItemStoryblok
+    | MenuLinkStoryblok
+    | PageStoryblok
+    | TeaserStoryblok
+  )[];
+  headline_rank?: "" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   _uid: string;
   component: "grid";
   [k: string]: any;
@@ -37,18 +50,31 @@ export interface HeroStoryblok {
   headline?: string;
   subheadline?: string;
   background_image?: AssetStoryblok;
-  single_option?: "constrained" | "full-width";
+  layout?: "constrained" | "full-height";
   _uid: string;
   component: "hero";
   [k: string]: any;
 }
 
+export interface MenuStoryblok {
+  headline?: string;
+  menu_items?: MenuItemStoryblok[];
+  headline_rank?: "" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  _uid: string;
+  component: "menu";
+  [k: string]: any;
+}
+
+export interface MenuItemStoryblok {
+  name?: string;
+  price?: string;
+  description?: string;
+  _uid: string;
+  component: "menu_item";
+  [k: string]: any;
+}
+
 export type MultilinkStoryblok =
-  | {
-      cached_url?: string;
-      linktype?: string;
-      [k: string]: any;
-    }
   | {
       id?: string;
       cached_url?: string;
@@ -99,14 +125,24 @@ export type MultilinkStoryblok =
     };
 
 export interface MenuLinkStoryblok {
-  link?: MultilinkStoryblok;
+  link?: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
   _uid: string;
   component: "menu_link";
   [k: string]: any;
 }
 
 export interface PageStoryblok {
-  body?: any[];
+  body?: (
+    | ConfigStoryblok
+    | FeatureStoryblok
+    | GridStoryblok
+    | HeroStoryblok
+    | MenuStoryblok
+    | MenuItemStoryblok
+    | MenuLinkStoryblok
+    | PageStoryblok
+    | TeaserStoryblok
+  )[];
   _uid: string;
   component: "page";
   uuid?: string;
@@ -114,7 +150,10 @@ export interface PageStoryblok {
 }
 
 export interface TeaserStoryblok {
+  subheadline?: string;
   headline?: string;
+  copy?: string;
+  image?: AssetStoryblok;
   _uid: string;
   component: "teaser";
   [k: string]: any;
