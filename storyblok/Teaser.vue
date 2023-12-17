@@ -16,14 +16,26 @@ const props = defineProps<Props>();
         props.blok.image?.filename ? 'md:grid-cols-2' : 'md:grid-cols-1',
       ]"
     >
-      <div>
-        <span class="text-3xl text-amber-600 leading-tight">
+      <div
+        class="flex flex-col"
+        :class="[
+          props.blok.image?.filename
+            ? 'items-start text-left'
+            : 'items-center text-center',
+        ]"
+      >
+        <span
+          v-if="props.blok.subheadline"
+          class="text-3xl text-amber-600 leading-tight max-w-[35ch]"
+        >
           {{ props.blok.subheadline }}
         </span>
-        <h3 class="text-6xl font-bold uppercase tracking-wide mb-6">
+        <h3
+          class="text-6xl font-bold uppercase tracking-wide mb-6 max-w-[35ch]"
+        >
           {{ props.blok.headline }}
         </h3>
-        <p class="prose text-neutral-500 max-w-[60ch]">
+        <p class="prose text-neutral-500 max-w-prose">
           {{ props.blok.copy }}
         </p>
       </div>

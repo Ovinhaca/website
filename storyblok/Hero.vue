@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { ArrowSmallRightIcon } from "@heroicons/vue/24/outline";
+
 import type { HeroStoryblok } from "../component-types-sb";
 
 type Props = {
