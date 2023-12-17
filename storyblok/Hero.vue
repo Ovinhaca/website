@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { ArrowSmallRightIcon } from "@heroicons/vue/24/outline";
+
 import type { HeroStoryblok } from "../component-types-sb";
 
 type Props = {
@@ -29,10 +31,12 @@ const props = defineProps<Props>();
             class="relative rounded-full px-3 py-1 text-sm leading-6 text-neutral-400 ring-1 ring-white/10 hover:ring-white/20"
           >
             Have a look at our
-            <NuxtLink to="/menu" class="font-semibold text-white">
-              <span class="absolute inset-0" aria-hidden="true" />
+            <NuxtLink
+              to="/menu"
+              class="font-semibold text-white inline-flex gap-x-1 items-center"
+            >
               menu
-              <span aria-hidden="true">&rarr;</span>
+              <ArrowSmallRightIcon class="h-4 w-4" aria-hidden="true" />
             </NuxtLink>
           </div>
         </div>

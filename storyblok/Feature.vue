@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { ArrowLongRightIcon } from "@heroicons/vue/24/outline";
+
 import type { FeatureStoryblok } from "../component-types-sb";
 
 type Props = {
@@ -24,9 +26,17 @@ const props = defineProps<Props>();
       >
         {{ props.blok.name }}
       </h3>
-      <p class="prose text-neutral-500 max-w-[60ch]">
+      <p class="prose text-neutral-500 max-w-prose">
         {{ props.blok.copy }}
       </p>
+      <NuxtLink
+        v-if="props.blok.link?.cached_url"
+        :to="`/${props.blok.link?.cached_url}`"
+        class="text-amber-600 hover:text-amber-500 inline-flex items-center gap-x-1 text-base font-semibold mt-5"
+      >
+        Learn more
+        <ArrowLongRightIcon class="h-6 w-6" aria-hidden="true" />
+      </NuxtLink>
     </div>
   </div>
 </template>
