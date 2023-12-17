@@ -2,7 +2,6 @@
   "extends": ["stylelint-config-standard-vue"],
   "plugins": [
     "stylelint-color-format",
-    "stylelint-no-unsupported-browser-features",
     "stylelint-order",
     "stylelint-use-logical-spec"
   ],
@@ -11,12 +10,6 @@
     "order/order": ["custom-properties", "declarations"],
     "order/properties-alphabetical-order": true,
     "liberty/use-logical-spec": true,
-    "plugin/no-unsupported-browser-features": [
-      true,
-      {
-        "severity": "warning"
-      }
-    ],
     "color-format/format": {
       "format": "hsl"
     },
