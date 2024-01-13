@@ -18,62 +18,6 @@ export interface AssetStoryblok {
   [k: string]: any;
 }
 
-export interface FeatureStoryblok {
-  image?: AssetStoryblok;
-  name?: string;
-  copy?: string;
-  _uid: string;
-  component: "feature";
-  [k: string]: any;
-}
-
-export interface GridStoryblok {
-  headline?: string;
-  columns?: (
-    | ConfigStoryblok
-    | FeatureStoryblok
-    | GridStoryblok
-    | HeroStoryblok
-    | MenuStoryblok
-    | MenuItemStoryblok
-    | MenuLinkStoryblok
-    | PageStoryblok
-    | TeaserStoryblok
-  )[];
-  headline_rank?: "" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-  _uid: string;
-  component: "grid";
-  [k: string]: any;
-}
-
-export interface HeroStoryblok {
-  headline?: string;
-  subheadline?: string;
-  background_image?: AssetStoryblok;
-  layout?: "constrained" | "full-height";
-  _uid: string;
-  component: "hero";
-  [k: string]: any;
-}
-
-export interface MenuStoryblok {
-  headline?: string;
-  menu_items?: MenuItemStoryblok[];
-  headline_rank?: "" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-  _uid: string;
-  component: "menu";
-  [k: string]: any;
-}
-
-export interface MenuItemStoryblok {
-  name?: string;
-  price?: string;
-  description?: string;
-  _uid: string;
-  component: "menu_item";
-  [k: string]: any;
-}
-
 export type MultilinkStoryblok =
   | {
       id?: string;
@@ -124,6 +68,78 @@ export type MultilinkStoryblok =
       [k: string]: any;
     };
 
+export interface FeatureStoryblok {
+  image?: AssetStoryblok;
+  name?: string;
+  copy?: string;
+  link?: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
+  _uid: string;
+  component: "feature";
+  [k: string]: any;
+}
+
+export interface GridStoryblok {
+  headline?: string;
+  headline_rank?: "" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  columns?: (
+    | ConfigStoryblok
+    | FeatureStoryblok
+    | GridStoryblok
+    | HeroStoryblok
+    | MapStoryblok
+    | MenuStoryblok
+    | MenuItemStoryblok
+    | MenuLinkStoryblok
+    | PageStoryblok
+    | TeaserStoryblok
+  )[];
+  _uid: string;
+  component: "grid";
+  [k: string]: any;
+}
+
+export interface HeroStoryblok {
+  teaser?: string;
+  teaser_link?: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
+  headline?: string;
+  subheadline?: string;
+  background_image?: AssetStoryblok;
+  booking_label?: string;
+  booking_link?: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
+  layout?: "constrained" | "full-height";
+  _uid: string;
+  component: "hero";
+  [k: string]: any;
+}
+
+export interface MapStoryblok {
+  headline?: string;
+  headline_rank?: "" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  latitude: string;
+  longitude: string;
+  _uid: string;
+  component: "map";
+  [k: string]: any;
+}
+
+export interface MenuStoryblok {
+  headline?: string;
+  menu_items?: MenuItemStoryblok[];
+  headline_rank?: "" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  _uid: string;
+  component: "menu";
+  [k: string]: any;
+}
+
+export interface MenuItemStoryblok {
+  name?: string;
+  price?: string;
+  description?: string;
+  _uid: string;
+  component: "menu_item";
+  [k: string]: any;
+}
+
 export interface MenuLinkStoryblok {
   link?: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
   _uid: string;
@@ -137,6 +153,7 @@ export interface PageStoryblok {
     | FeatureStoryblok
     | GridStoryblok
     | HeroStoryblok
+    | MapStoryblok
     | MenuStoryblok
     | MenuItemStoryblok
     | MenuLinkStoryblok
@@ -151,8 +168,8 @@ export interface PageStoryblok {
 
 export interface TeaserStoryblok {
   subheadline?: string;
-  headline?: string;
-  copy?: string;
+  headline: string;
+  copy: string;
   image?: AssetStoryblok;
   _uid: string;
   component: "teaser";

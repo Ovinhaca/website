@@ -12,6 +12,7 @@ export default defineNuxtConfig({
     ],
     "@nuxtjs/tailwindcss",
     "@vueuse/nuxt",
+    "nuxt3-leaflet",
   ],
   typescript: {
     typeCheck: true,
