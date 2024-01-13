@@ -24,14 +24,20 @@ const props = defineProps<Props>();
         v-if="props.blok.layout === 'full-height'"
         class="mx-auto max-w-2xl py-32"
       >
-        <div class="hidden sm:mb-8 sm:flex sm:justify-center">
+        <div
+          v-if="props.blok.teaser_link"
+          class="hidden sm:mb-8 sm:flex sm:justify-center"
+        >
           <div
             class="relative rounded-full px-3 py-1 text-sm leading-6 text-neutral-400 ring-1 ring-white/10 hover:ring-white/20"
           >
-            Have a look at our
-            <NuxtLink to="/menu" class="font-semibold text-white">
+            {{ props.blok.teaser }}
+            <NuxtLink
+              :to="`/${props.blok.teaser_link?.cached_url}`"
+              class="font-semibold text-white lowercase"
+            >
               <span class="absolute inset-0" aria-hidden="true" />
-              menu
+              {{ props.blok.teaser_link?.cached_url }}
               <span aria-hidden="true">&rarr;</span>
             </NuxtLink>
           </div>
@@ -50,10 +56,12 @@ const props = defineProps<Props>();
             </h1>
           </div>
           <NuxtLink
-            to="#"
+            v-if="props.blok.booking_link"
+            :to="`${props.blok.booking_link?.cached_url}`"
+            :target="`${props.blok.booking_link?.target}`"
             class="rounded-md bg-amber-600 uppercase px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-amber-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-500"
           >
-            Book a table
+            {{ props.blok.booking_label }}
           </NuxtLink>
         </div>
       </div>
