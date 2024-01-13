@@ -33,7 +33,7 @@
       "name": "feature",
       "display_name": null,
       "created_at": "2023-09-17T21:43:45.850Z",
-      "updated_at": "2023-10-31T20:51:35.559Z",
+      "updated_at": "2023-12-17T13:57:59.486Z",
       "id": 4586471,
       "schema": {
         "image": {
@@ -50,6 +50,9 @@
         },
         "copy": {
           "type": "textarea"
+        },
+        "link": {
+          "type": "multilink"
         }
       },
       "image": null,
@@ -68,16 +71,12 @@
       "name": "grid",
       "display_name": null,
       "created_at": "2023-09-17T21:43:45.835Z",
-      "updated_at": "2023-11-19T20:21:30.155Z",
+      "updated_at": "2024-01-13T15:58:56.783Z",
       "id": 4586470,
       "schema": {
         "headline": {
           "type": "text",
           "pos": 0
-        },
-        "columns": {
-          "type": "bloks",
-          "pos": 1
         },
         "headline_rank": {
           "type": "option",
@@ -114,7 +113,12 @@
               "name": "h6"
             }
           ],
-          "default_value": "h3"
+          "default_value": "h3",
+          "pos": 1
+        },
+        "columns": {
+          "type": "bloks",
+          "pos": 2
         }
       },
       "image": null,
@@ -133,23 +137,42 @@
       "name": "hero",
       "display_name": null,
       "created_at": "2023-09-24T13:35:55.120Z",
-      "updated_at": "2023-11-14T20:00:00.515Z",
+      "updated_at": "2024-01-13T15:02:13.595Z",
       "id": 4618934,
       "schema": {
+        "teaser": {
+          "type": "text",
+          "pos": 0
+        },
+        "teaser_link": {
+          "type": "multilink",
+          "pos": 1,
+          "restrict_content_types": false,
+          "component_whitelist": []
+        },
         "headline": {
           "type": "text",
           "key": "headline",
-          "pos": 0
+          "pos": 2
         },
         "subheadline": {
           "type": "text",
           "key": "subheadline",
-          "pos": 1
+          "pos": 3
         },
         "background_image": {
           "type": "asset",
           "key": "background_image",
-          "pos": 2
+          "pos": 4
+        },
+        "booking_label": {
+          "type": "text",
+          "pos": 5
+        },
+        "booking_link": {
+          "type": "multilink",
+          "pos": 6,
+          "allow_target_blank": true
         },
         "layout": {
           "type": "option",
@@ -169,7 +192,7 @@
           "exclude_empty_option": true,
           "default_value": "constrained",
           "key": "single_option",
-          "pos": 3
+          "pos": 7
         }
       },
       "image": null,
@@ -180,6 +203,80 @@
       "all_presets": [],
       "preset_id": null,
       "real_name": "hero",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
+      "name": "map",
+      "display_name": null,
+      "created_at": "2024-01-13T16:42:29.658Z",
+      "updated_at": "2024-01-13T16:51:05.288Z",
+      "id": 5164730,
+      "schema": {
+        "headline": {
+          "type": "text",
+          "pos": 0
+        },
+        "headline_rank": {
+          "type": "option",
+          "use_uuid": true,
+          "pos": 1,
+          "default_value": "h3",
+          "options": [
+            {
+              "_uid": "d1dda22b-a61a-465e-a106-d9d384283c08",
+              "name": "h1",
+              "value": "h1"
+            },
+            {
+              "_uid": "5c6772b4-5e66-4238-b6dc-f8ddda820082",
+              "value": "h2",
+              "name": "h2"
+            },
+            {
+              "_uid": "7ca491f1-1f9e-4c2c-b8f5-8acde006ac52",
+              "value": "h3",
+              "name": "h3"
+            },
+            {
+              "_uid": "87b7d15e-bfcb-4731-9930-9b7e67abb2f2",
+              "value": "h4",
+              "name": "h4"
+            },
+            {
+              "_uid": "4e2245ce-8401-439f-9968-0d306651ef3b",
+              "value": "h5",
+              "name": "h5"
+            },
+            {
+              "_uid": "81d64de5-13ec-4db2-93ee-3d601a1d807c",
+              "value": "h6",
+              "name": "h6"
+            }
+          ]
+        },
+        "latitude": {
+          "type": "number",
+          "decimals": 6,
+          "required": true,
+          "pos": 2
+        },
+        "longitude": {
+          "type": "number",
+          "decimals": 6,
+          "pos": 3,
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "map",
       "component_group_uuid": null,
       "color": null,
       "icon": null
@@ -340,7 +437,7 @@
       "name": "teaser",
       "display_name": null,
       "created_at": "2023-09-17T21:43:45.818Z",
-      "updated_at": "2023-10-31T19:34:16.346Z",
+      "updated_at": "2023-12-17T13:52:46.873Z",
       "id": 4586469,
       "schema": {
         "subheadline": {
@@ -349,11 +446,13 @@
         },
         "headline": {
           "type": "text",
-          "pos": 1
+          "pos": 1,
+          "required": true
         },
         "copy": {
           "type": "textarea",
-          "pos": 2
+          "pos": 2,
+          "required": true
         },
         "image": {
           "type": "asset",
