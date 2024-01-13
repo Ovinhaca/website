@@ -40,7 +40,7 @@ const props = defineProps<Props>();
             >
               <span class="absolute inset-0" aria-hidden="true" />
               {{ props.blok.teaser_link?.cached_url }}
-              <span aria-hidden="true">&rarr;</span>
+              <ArrowSmallRightIcon aria-hidden="true" class="h-4 w-4 inline" />
             </NuxtLink>
           </div>
         </div>
