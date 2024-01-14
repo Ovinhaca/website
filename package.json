@@ -87,6 +87,10 @@
     "vue-tsc": "^1.8.11"
   },
   "dependencies": {
+    "@formkit/core": "^1.4.0",
+    "@formkit/i18n": "^1.4.0",
+    "@formkit/nuxt": "^1.4.0",
+    "@formkit/vue": "^1.4.0",
     "@headlessui/vue": "^1.7.16",
     "@heroicons/vue": "^2.0.18",
     "@storyblok/nuxt": "^6.0.0",

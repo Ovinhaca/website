@@ -30,6 +30,66 @@
       "icon": null
     },
     {
+      "name": "contact-form",
+      "display_name": "Contact Form",
+      "created_at": "2024-01-13T19:14:50.991Z",
+      "updated_at": "2024-01-13T19:23:14.749Z",
+      "id": 5164953,
+      "schema": {
+        "headline": {
+          "type": "text"
+        },
+        "headline_rank": {
+          "type": "option",
+          "use_uuid": true,
+          "default_value": "h3",
+          "options": [
+            {
+              "_uid": "b0fa8773-d091-452a-9538-20ac75bf2b28",
+              "name": "h1",
+              "value": "h1"
+            },
+            {
+              "_uid": "2337a807-6e9b-42d1-89d2-2d49fceae7a5",
+              "value": "h2",
+              "name": "h2"
+            },
+            {
+              "_uid": "0e8fbab3-519b-46ec-8023-983356c7ea0e",
+              "value": "h3",
+              "name": "h3"
+            },
+            {
+              "_uid": "3dfc054d-cd01-45b2-888a-eec883ca43ad",
+              "value": "h4",
+              "name": "h4"
+            },
+            {
+              "_uid": "a2641cf7-e16f-4af6-87bc-b9b329726109",
+              "value": "h5",
+              "name": "h5"
+            },
+            {
+              "_uid": "0ff553a3-dcb9-435f-9058-689029adaa6e",
+              "value": "h6",
+              "name": "h6"
+            }
+          ]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Contact Form",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
       "name": "feature",
       "display_name": null,
       "created_at": "2023-09-17T21:43:45.850Z",
@@ -211,7 +271,7 @@
       "name": "map",
       "display_name": null,
       "created_at": "2024-01-13T16:42:29.658Z",
-      "updated_at": "2024-01-13T16:51:05.288Z",
+      "updated_at": "2024-01-13T18:07:58.501Z",
       "id": 5164730,
       "schema": {
         "headline": {
@@ -258,13 +318,13 @@
         },
         "latitude": {
           "type": "number",
-          "decimals": 6,
+          "decimals": 7,
           "required": true,
           "pos": 2
         },
         "longitude": {
           "type": "number",
-          "decimals": 6,
+          "decimals": 7,
           "pos": 3,
           "required": true
         }

@@ -12,10 +12,14 @@ export default defineNuxtConfig({
     ],
     "@nuxtjs/tailwindcss",
     "@vueuse/nuxt",
+    "@formkit/nuxt",
     "nuxt3-leaflet",
   ],
   typescript: {
     typeCheck: true,
   },
   devtools: { enabled: true },
+  formkit: {
+    autoImport: true,
+  },
 });
