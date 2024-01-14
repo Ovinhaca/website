@@ -7,6 +7,7 @@ export default {
     "storyblok/**/*.{vue,ts}",
     "components/**/*.{vue,ts}",
     "pages/**/*.vue",
+    "formkit.theme.ts",
   ],
   theme: {
     extend: {

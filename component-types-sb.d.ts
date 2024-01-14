@@ -7,6 +7,14 @@ export interface ConfigStoryblok {
   [k: string]: any;
 }
 
+export interface ContactFormStoryblok {
+  headline?: string;
+  headline_rank?: "" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  _uid: string;
+  component: "contact-form";
+  [k: string]: any;
+}
+
 export interface AssetStoryblok {
   alt?: string;
   copyright?: string;
@@ -83,6 +91,7 @@ export interface GridStoryblok {
   headline_rank?: "" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   columns?: (
     | ConfigStoryblok
+    | ContactFormStoryblok
     | FeatureStoryblok
     | GridStoryblok
     | HeroStoryblok
@@ -150,6 +159,7 @@ export interface MenuLinkStoryblok {
 export interface PageStoryblok {
   body?: (
     | ConfigStoryblok
+    | ContactFormStoryblok
     | FeatureStoryblok
     | GridStoryblok
     | HeroStoryblok

@@ -27,7 +27,7 @@ const latLng = computed(() => {
         ref="map"
         :zoom="zoom"
         :center="latLng as [number, number]"
-        class="z-5"
+        class="z-10"
       >
         <LTileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
