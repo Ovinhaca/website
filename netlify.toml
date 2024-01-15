@@ -1,6 +1,6 @@
 [build]
   publish = "dist"
-  command = "npm run build"
+  command = "npx nuxi generate"
 
 [context.production]
-  environment = { NODE_VERSION = "18.17.1" }
+  environment = { NODE_VERSION = "18.19.0" }
