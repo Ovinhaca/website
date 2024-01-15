@@ -102,6 +102,8 @@ const handleSubmit = (data: any) => {
           placeholder="Please leave a message"
           outer-class="$remove:mb-4 md:max-w-full col-span-full"
         />
+
+        <FormKit name="form-name" type="hidden" value="contact" />
       </div>
     </FormKit>
     <p>
