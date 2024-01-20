@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reset } from "@formkit/core";
+// import { reset } from "@formkit/core";
 import { CheckCircleIcon } from "@heroicons/vue/20/solid";
 
 import type { ContactFormStoryblok } from "../component-types-sb";
@@ -12,6 +12,7 @@ const props = defineProps<Props>();
 
 const success = ref(false);
 
+/*
 const handleSubmit = (data: any) => {
   const formData = new FormData();
   formData.append("name", data.name);
@@ -30,6 +31,7 @@ const handleSubmit = (data: any) => {
     })
     .catch((error) => alert(error));
 };
+*/
 </script>
 
 <template>
@@ -62,7 +64,6 @@ const handleSubmit = (data: any) => {
       name="contact"
       netlify-honeypot="bot-field"
       data-netlify="true"
-      @submit="handleSubmit"
     >
       <p class="hidden">
         <label>
