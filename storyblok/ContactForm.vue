@@ -21,7 +21,7 @@ const handleSubmit = (data: any) => {
   formData.append("message", data.message);
   formData.append("form-name", data["form-name"]);
 
-  fetch("/", {
+  fetch("/contact", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: new URLSearchParams(formData as any).toString(),
@@ -62,17 +62,11 @@ const handleSubmit = (data: any) => {
       id="contact"
       type="form"
       name="contact"
-      netlify-honeypot="bot-field"
       data-netlify="true"
+      netlify-honeypot="bot-field"
+      method="post"
       @submit="handleSubmit"
     >
-      <p class="hidden">
-        <label>
-          Don’t fill this out if you’re human:
-          <FormKit name="bot-field" type="text" />
-        </label>
-      </p>
-
       <div class="grid md:grid-cols-3 gap-4 mb-4">
         <FormKit
           id="name"
@@ -113,6 +107,13 @@ const handleSubmit = (data: any) => {
           outer-class="$remove:mb-4 md:max-w-full col-span-full"
         />
       </div>
+
+      <p class="hidden">
+        <label>
+          Don’t fill this out if you’re human:
+          <FormKit type="text" name="bot-field" />
+        </label>
+      </p>
 
       <FormKit type="hidden" name="form-name" value="contact" />
     </FormKit>
