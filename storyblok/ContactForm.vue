@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// import { reset } from "@formkit/core";
+import { reset } from "@formkit/core";
 import { CheckCircleIcon } from "@heroicons/vue/20/solid";
 
 import type { ContactFormStoryblok } from "../component-types-sb";
@@ -12,13 +12,14 @@ const props = defineProps<Props>();
 
 const success = ref(false);
 
-/*
 const handleSubmit = (data: any) => {
   const formData = new FormData();
+  formData.append("bot-field", data["bot-field"]);
   formData.append("name", data.name);
   formData.append("email", data.email);
   formData.append("phone", data.phone);
   formData.append("message", data.message);
+  formData.append("form-name", data["form-name"]);
 
   fetch("/", {
     method: "POST",
@@ -31,7 +32,6 @@ const handleSubmit = (data: any) => {
     })
     .catch((error) => alert(error));
 };
-*/
 </script>
 
 <template>
@@ -64,6 +64,7 @@ const handleSubmit = (data: any) => {
       name="contact"
       netlify-honeypot="bot-field"
       data-netlify="true"
+      @submit="handleSubmit"
     >
       <p class="hidden">
         <label>
@@ -112,6 +113,8 @@ const handleSubmit = (data: any) => {
           outer-class="$remove:mb-4 md:max-w-full col-span-full"
         />
       </div>
+
+      <FormKit type="hidden" name="form-name" value="contact" />
     </FormKit>
     <p>
       <em><small class="text-gray-400">* Mandatory fields</small></em>
