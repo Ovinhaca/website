@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reset } from "@formkit/core";
+// import { reset } from "@formkit/core";
 import { CheckCircleIcon } from "@heroicons/vue/20/solid";
 
 import type { ContactFormStoryblok } from "../component-types-sb";
@@ -12,6 +12,7 @@ const props = defineProps<Props>();
 
 const success = ref(false);
 
+/*
 const handleSubmit = (data: any) => {
   const formData = new FormData();
   formData.append("name", data.name);
@@ -30,6 +31,7 @@ const handleSubmit = (data: any) => {
     })
     .catch((error) => alert(error));
 };
+*/
 </script>
 
 <template>
@@ -60,9 +62,16 @@ const handleSubmit = (data: any) => {
       id="contact"
       type="form"
       name="contact"
+      netlify-honeypot="bot-field"
       data-netlify="true"
-      @submit="handleSubmit"
     >
+      <p class="hidden">
+        <label>
+          Don’t fill this out if you’re human:
+          <FormKit name="bot-field" type="text" />
+        </label>
+      </p>
+
       <div class="grid md:grid-cols-3 gap-4 mb-4">
         <FormKit
           id="name"
@@ -102,8 +111,6 @@ const handleSubmit = (data: any) => {
           placeholder="Please leave a message"
           outer-class="$remove:mb-4 md:max-w-full col-span-full"
         />
-
-        <FormKit name="form-name" type="hidden" value="contact" />
       </div>
     </FormKit>
     <p>
