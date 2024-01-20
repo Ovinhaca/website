@@ -60,9 +60,17 @@ const handleSubmit = (data: any) => {
       id="contact"
       type="form"
       name="contact"
+      netlify-honeypot="bot-field"
       data-netlify="true"
       @submit="handleSubmit"
     >
+      <p class="hidden">
+        <label>
+          Don’t fill this out if you’re human:
+          <FormKit name="bot-field" type="text" />
+        </label>
+      </p>
+
       <div class="grid md:grid-cols-3 gap-4 mb-4">
         <FormKit
           id="name"
@@ -102,8 +110,6 @@ const handleSubmit = (data: any) => {
           placeholder="Please leave a message"
           outer-class="$remove:mb-4 md:max-w-full col-span-full"
         />
-
-        <FormKit name="form-name" type="hidden" value="contact" />
       </div>
     </FormKit>
     <p>
