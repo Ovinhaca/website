@@ -7,6 +7,28 @@ export interface ConfigStoryblok {
   [k: string]: any;
 }
 
+export interface RichtextStoryblok {
+  type: string;
+  content?: RichtextStoryblok[];
+  marks?: RichtextStoryblok[];
+  attrs?: any;
+  text?: string;
+  [k: string]: any;
+}
+
+export interface ContactBlockStoryblok {
+  location_head?: string;
+  location_body?: RichtextStoryblok;
+  contact_head?: string;
+  contact_body?: RichtextStoryblok;
+  opening_head?: string;
+  opening_body?: RichtextStoryblok;
+  head_rank?: "" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  _uid: string;
+  component: "contact-block";
+  [k: string]: any;
+}
+
 export interface ContactFormStoryblok {
   headline?: string;
   headline_rank?: "" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
@@ -91,6 +113,7 @@ export interface GridStoryblok {
   headline_rank?: "" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   columns?: (
     | ConfigStoryblok
+    | ContactBlockStoryblok
     | ContactFormStoryblok
     | FeatureStoryblok
     | GridStoryblok
@@ -159,6 +182,7 @@ export interface MenuLinkStoryblok {
 export interface PageStoryblok {
   body?: (
     | ConfigStoryblok
+    | ContactBlockStoryblok
     | ContactFormStoryblok
     | FeatureStoryblok
     | GridStoryblok

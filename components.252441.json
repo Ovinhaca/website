@@ -30,6 +30,85 @@
       "icon": null
     },
     {
+      "name": "contact-block",
+      "display_name": null,
+      "created_at": "2024-01-21T18:49:12.308Z",
+      "updated_at": "2024-01-21T18:58:02.604Z",
+      "id": 5205167,
+      "schema": {
+        "location_head": {
+          "type": "text",
+          "pos": 0,
+          "key": "loctation_headline"
+        },
+        "location_body": {
+          "type": "richtext",
+          "pos": 1,
+          "key": "location"
+        },
+        "contact_head": {
+          "type": "text"
+        },
+        "contact_body": {
+          "type": "richtext"
+        },
+        "opening_head": {
+          "type": "text"
+        },
+        "opening_body": {
+          "type": "richtext"
+        },
+        "head_rank": {
+          "type": "option",
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "135df279-e040-47ec-9ddc-701cc762da55",
+              "name": "h1",
+              "value": "h1"
+            },
+            {
+              "_uid": "007d2b35-95f3-4876-8a5f-50309d336d04",
+              "value": "h2",
+              "name": "h2"
+            },
+            {
+              "_uid": "2ef1718e-b7c2-4537-8f92-fe90705d9e9b",
+              "value": "h3",
+              "name": "h3"
+            },
+            {
+              "_uid": "00c020af-a4c7-420e-81ae-7684fbfb98e9",
+              "value": "h4",
+              "name": "h4"
+            },
+            {
+              "_uid": "8a3f9b15-247e-4be4-bcf1-1479268c65ec",
+              "value": "h5",
+              "name": "h5"
+            },
+            {
+              "_uid": "a4b62532-d62e-477a-9112-321a2dc88309",
+              "value": "h6",
+              "name": "h6"
+            }
+          ],
+          "default_value": "h3"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "contact-block",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
       "name": "contact-form",
       "display_name": "Contact Form",
       "created_at": "2024-01-13T19:14:50.991Z",
