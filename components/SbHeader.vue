@@ -21,6 +21,24 @@ const logoSrc = computed(() => {
     : "https://a.storyblok.com/f/252441/110x54/9501e479c7/logo-light.svg";
 });
 
+const whatsappSrc = computed(() => {
+  return isStuck.value
+    ? "https://a.storyblok.com/f/252441/24x24/0071ceb0ca/whatsapp-dark.svg"
+    : "https://a.storyblok.com/f/252441/24x24/d0ef24a933/whatsapp-light.svg";
+});
+
+const googleSrc = computed(() => {
+  return isStuck.value
+    ? "https://a.storyblok.com/f/252441/24x24/b31a3a114c/google-dark.svg"
+    : "https://a.storyblok.com/f/252441/24x24/10dc2e3436/google-light.svg";
+});
+
+const instagramSrc = computed(() => {
+  return isStuck.value
+    ? "https://a.storyblok.com/f/252441/24x24/d45808a42f/instagram-dark.svg"
+    : "https://a.storyblok.com/f/252441/24x24/521fb65ba3/instagram-light.svg";
+});
+
 const tripadvisorSrc = computed(() => {
   return isStuck.value
     ? "https://a.storyblok.com/f/252441/86x54/85ba295227/tripadvisor-dark.svg"
@@ -68,10 +86,35 @@ const mobileMenuOpen = ref(false);
             </NuxtLink>
           </li>
         </ul>
-        <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+        <div class="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-4">
+          <NuxtLink
+            to="https://wa.me/+351917394364"
+            class="-m-1.5 p-1.5"
+            target="_blank"
+          >
+            <span class="sr-only">WhatsApp</span>
+            <img class="h-4 w-auto" :src="whatsappSrc" alt="" />
+          </NuxtLink>
+          <NuxtLink
+            to="https://www.google.com/search?q=o+vinha%C3%A7a&rlz=1C1FCXM_pt-PTPT1072PT1072&oq=o+vinha%C3%A7a&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDzSAQg0MzEzajBqN6gCALACAA&sourceid=chrome&ie=UTF-8"
+            class="-m-1.5 p-1.5"
+            target="_blank"
+          >
+            <span class="sr-only">Google</span>
+            <img class="h-4 w-auto" :src="googleSrc" alt="" />
+          </NuxtLink>
+          <NuxtLink
+            to="https://www.instagram.com/ovinhaca/"
+            class="-m-1.5 p-1.5"
+            target="_blank"
+          >
+            <span class="sr-only">Instagram</span>
+            <img class="h-4 w-auto" :src="instagramSrc" alt="" />
+          </NuxtLink>
           <NuxtLink
             to="https://www.tripadvisor.com/Restaurant_Review-g189158-d8317381-Reviews-O_Vinhaca_Tapas_Vinhos-Lisbon_Lisbon_District_Central_Portugal.html"
             class="-m-1.5 p-1.5"
+            target="_blank"
           >
             <span class="sr-only">Tripadvisor</span>
             <img class="h-4 w-auto" :src="tripadvisorSrc" alt="" />
@@ -120,8 +163,49 @@ const mobileMenuOpen = ref(false);
                 </ul>
                 <div class="py-6">
                   <NuxtLink
+                    to="https://wa.me/+351917394364"
+                    class="-m-1.5 p-1.5"
+                    target="_blank"
+                    @click="mobileMenuOpen = false"
+                  >
+                    <span class="sr-only">WhatsApp</span>
+                    <img
+                      class="h-6 w-auto"
+                      src="https://a.storyblok.com/f/252441/24x24/0071ceb0ca/whatsapp-dark.svg"
+                      alt=""
+                    />
+                  </NuxtLink>
+                  <NuxtLink
+                    to="https://www.google.com/search?q=o+vinha%C3%A7a&rlz=1C1FCXM_pt-PTPT1072PT1072&oq=o+vinha%C3%A7a&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDzSAQg0MzEzajBqN6gCALACAA&sourceid=chrome&ie=UTF-8"
+                    class="-m-1.5 p-1.5"
+                    target="_blank"
+                    @click="mobileMenuOpen = false"
+                  >
+                    <span class="sr-only">Instagram</span>
+                    <img
+                      class="h-6 w-auto"
+                      src="https://a.storyblok.com/f/252441/24x24/d45808a42f/instagram-dark.svg"
+                      alt=""
+                    />
+                  </NuxtLink>
+                  <NuxtLink
+                    to="https://www.instagram.com/ovinhaca/"
+                    class="-m-1.5 p-1.5"
+                    target="_blank"
+                    @click="mobileMenuOpen = false"
+                  >
+                    <span class="sr-only">Google</span>
+                    <img
+                      class="h-6 w-auto"
+                      src="https://a.storyblok.com/f/252441/24x24/b31a3a114c/google-dark.svg"
+                      alt=""
+                    />
+                  </NuxtLink>
+                  <NuxtLink
                     to="https://www.tripadvisor.com/Restaurant_Review-g189158-d8317381-Reviews-O_Vinhaca_Tapas_Vinhos-Lisbon_Lisbon_District_Central_Portugal.html"
                     class="-m-1.5 p-1.5"
+                    target="_blank"
+                    @click="mobileMenuOpen = false"
                   >
                     <span class="sr-only">Tripadvisor</span>
                     <img
