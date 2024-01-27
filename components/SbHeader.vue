@@ -112,6 +112,7 @@ const mobileMenuOpen = ref(false);
                     <NuxtLink
                       :to="`/${blok.link?.cached_url}`"
                       class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-neutral-800 hover:bg-neutral-50"
+                      @click="mobileMenuOpen = false"
                     >
                       {{ blok.link?.story.name }}
                     </NuxtLink>
