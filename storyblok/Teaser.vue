@@ -6,6 +6,8 @@ type Props = {
 };
 
 const props = defineProps<Props>();
+
+const resolvedCopyRichText = computed(() => renderRichText(props.blok.copy));
 </script>
 
 <template>
@@ -35,11 +37,9 @@ const props = defineProps<Props>();
         >
           {{ props.blok.headline }}
         </h3>
-        <p class="prose text-neutral-500 max-w-prose">
-          {{ props.blok.copy }}
-        </p>
+        <div class="prose" v-html="resolvedCopyRichText"></div>
       </div>
-      <div v-if="props.blok.image?.filename">
+      <div v-if="props.blok.image?.filename" class="self-start">
         <img
           :src="`${props.blok.image?.filename}/m/500x0`"
           :alt="props.blok.background_image?.alt"

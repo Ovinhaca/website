@@ -201,10 +201,10 @@ export interface PageStoryblok {
 }
 
 export interface TeaserStoryblok {
+  image?: AssetStoryblok;
   subheadline?: string;
   headline: string;
-  copy: string;
-  image?: AssetStoryblok;
+  copy: RichtextStoryblok;
   _uid: string;
   component: "teaser";
   [k: string]: any;
