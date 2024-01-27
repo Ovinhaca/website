@@ -118,6 +118,7 @@ export interface GridStoryblok {
     | FeatureStoryblok
     | GridStoryblok
     | HeroStoryblok
+    | ImageStoryblok
     | MapStoryblok
     | MenuStoryblok
     | MenuItemStoryblok
@@ -141,6 +142,13 @@ export interface HeroStoryblok {
   layout?: "constrained" | "full-height";
   _uid: string;
   component: "hero";
+  [k: string]: any;
+}
+
+export interface ImageStoryblok {
+  image: AssetStoryblok;
+  _uid: string;
+  component: "image";
   [k: string]: any;
 }
 
@@ -187,6 +195,7 @@ export interface PageStoryblok {
     | FeatureStoryblok
     | GridStoryblok
     | HeroStoryblok
+    | ImageStoryblok
     | MapStoryblok
     | MenuStoryblok
     | MenuItemStoryblok
