@@ -176,7 +176,7 @@ const mobileMenuOpen = ref(false);
                     />
                   </NuxtLink>
                   <NuxtLink
-                    to="https://www.google.com/search?q=o+vinha%C3%A7a&rlz=1C1FCXM_pt-PTPT1072PT1072&oq=o+vinha%C3%A7a&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDzSAQg0MzEzajBqN6gCALACAA&sourceid=chrome&ie=UTF-8"
+                    to="https://www.instagram.com/ovinhaca/"
                     class="-m-1.5 p-1.5"
                     target="_blank"
                     @click="mobileMenuOpen = false"
@@ -189,7 +189,7 @@ const mobileMenuOpen = ref(false);
                     />
                   </NuxtLink>
                   <NuxtLink
-                    to="https://www.instagram.com/ovinhaca/"
+                    to="https://www.google.com/search?q=o+vinha%C3%A7a&rlz=1C1FCXM_pt-PTPT1072PT1072&oq=o+vinha%C3%A7a&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg7MgYIAhBFGDzSAQg0MzEzajBqN6gCALACAA&sourceid=chrome&ie=UTF-8"
                     class="-m-1.5 p-1.5"
                     target="_blank"
                     @click="mobileMenuOpen = false"
