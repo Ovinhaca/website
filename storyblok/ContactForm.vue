@@ -14,14 +14,14 @@ const success = ref(false);
 
 const handleSubmit = (data: any) => {
   const formData = new FormData();
-  formData.append("bot-field", data["bot-field"]);
   formData.append("name", data.name);
   formData.append("email", data.email);
   formData.append("phone", data.phone);
   formData.append("message", data.message);
+  formData.append("bot-field", data["bot-field"]);
   formData.append("form-name", data["form-name"]);
 
-  fetch("/contact", {
+  fetch("/", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: new URLSearchParams(formData as any).toString(),
@@ -61,17 +61,18 @@ const handleSubmit = (data: any) => {
     <FormKit
       id="contact"
       type="form"
+      action="/"
+      method="POST"
       name="contact"
-      data-netlify="true"
       netlify-honeypot="bot-field"
-      method="post"
+      data-netlify="true"
       @submit="handleSubmit"
     >
       <div class="grid md:grid-cols-3 gap-4 mb-4">
         <FormKit
           id="name"
-          type="text"
           name="name"
+          type="text"
           label="Name *"
           validation="required"
           placeholder="Please add your full name"
@@ -80,8 +81,8 @@ const handleSubmit = (data: any) => {
 
         <FormKit
           id="email"
-          type="email"
           name="email"
+          type="email"
           label="Email *"
           validation="required|email"
           placeholder="Please add your email"
@@ -90,8 +91,8 @@ const handleSubmit = (data: any) => {
 
         <FormKit
           id="phone"
-          type="text"
           name="phone"
+          type="text"
           label="Phone"
           placeholder=""
           outer-class="$remove:mb-4"
@@ -99,8 +100,8 @@ const handleSubmit = (data: any) => {
 
         <FormKit
           id="message"
-          type="textarea"
           name="message"
+          type="textarea"
           label="Message *"
           validation="required"
           placeholder="Please leave a message"
@@ -111,7 +112,7 @@ const handleSubmit = (data: any) => {
       <p class="hidden">
         <label>
           Don’t fill this out if you’re human:
-          <FormKit type="text" name="bot-field" />
+          <FormKit name="bot-field" />
         </label>
       </p>
 
