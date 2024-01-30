@@ -21,7 +21,7 @@ const handleSubmit = (data: any) => {
   formData.append("bot-field", data["bot-field"]);
   formData.append("form-name", data["form-name"]);
 
-  fetch("/", {
+  fetch("/contact-form.html", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: new URLSearchParams(formData as any).toString(),
