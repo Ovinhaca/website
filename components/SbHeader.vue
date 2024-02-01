@@ -88,7 +88,7 @@ const mobileMenuOpen = ref(false);
         </ul>
         <div class="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-4">
           <NuxtLink
-            to="https://wa.me/+351917394364"
+            to="https://wa.me/+351915725435"
             class="-m-1.5 p-1.5"
             target="_blank"
           >
@@ -163,7 +163,7 @@ const mobileMenuOpen = ref(false);
                 </ul>
                 <div class="py-6">
                   <NuxtLink
-                    to="https://wa.me/+351917394364"
+                    to="https://wa.me/+351915725435"
                     class="-m-1.5 p-1.5"
                     target="_blank"
                     @click="mobileMenuOpen = false"
