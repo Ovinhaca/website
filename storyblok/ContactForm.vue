@@ -13,12 +13,15 @@ const props = defineProps<Props>();
 const success = ref(false);
 
 const handleSubmit = (data: any) => {
+  if (data["bot-field"]) {
+    return;
+  }
+
   const formData = new FormData();
   formData.append("name", data.name);
   formData.append("email", data.email);
   formData.append("phone", data.phone);
   formData.append("message", data.message);
-  formData.append("bot-field", data["bot-field"]);
   formData.append("form-name", data["form-name"]);
 
   fetch("/contact-form.html", {
