@@ -76,9 +76,9 @@ const handleSubmit = (data: any) => {
           id="name"
           name="name"
           type="text"
-          label="Name *"
+          label="Nome *"
           validation="required"
-          placeholder="Please add your full name"
+          placeholder="Acrescente o seu nome completo"
           outer-class="$remove:mb-4"
         />
 
@@ -88,7 +88,7 @@ const handleSubmit = (data: any) => {
           type="email"
           label="Email *"
           validation="required|email"
-          placeholder="Please add your email"
+          placeholder="Adicione o seu e-mail"
           outer-class="$remove:mb-4"
         />
 
@@ -96,7 +96,7 @@ const handleSubmit = (data: any) => {
           id="phone"
           name="phone"
           type="text"
-          label="Phone"
+          label="Telefone"
           placeholder=""
           outer-class="$remove:mb-4"
         />
@@ -105,9 +105,9 @@ const handleSubmit = (data: any) => {
           id="message"
           name="message"
           type="textarea"
-          label="Message *"
+          label="Mensagem *"
           validation="required"
-          placeholder="Please leave a message"
+          placeholder="Deixe uma mensagem"
           outer-class="$remove:mb-4 md:max-w-full col-span-full"
         />
       </div>
@@ -122,7 +122,7 @@ const handleSubmit = (data: any) => {
       <FormKit type="hidden" name="form-name" value="contact" />
     </FormKit>
     <p>
-      <em><small class="text-gray-400">* Mandatory fields</small></em>
+      <em><small class="text-gray-400">* Campos obrigatórios</small></em>
     </p>
   </SbSection>
 </template>
