@@ -5,7 +5,7 @@ import { rootClasses } from "./formkit.theme";
 
 export default defineFormKitConfig({
   locales: { pt },
-  locale: "en",
+  locale: "pt",
   config: {
     rootClasses,
   },
