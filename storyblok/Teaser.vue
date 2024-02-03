@@ -33,11 +33,14 @@ const resolvedCopyRichText = computed(() => renderRichText(props.blok.copy));
           {{ props.blok.subheadline }}
         </span>
         <h3
-          class="text-6xl font-bold uppercase tracking-wide mb-6 max-w-[35ch]"
+          class="text-5xl md:text-6xl font-bold uppercase tracking-wide mb-6 max-w-[35ch]"
         >
           {{ props.blok.headline }}
         </h3>
-        <div class="prose" v-html="resolvedCopyRichText"></div>
+        <div
+          class="prose max-w-[60ch] text-left"
+          v-html="resolvedCopyRichText"
+        ></div>
       </div>
       <div v-if="props.blok.image?.filename" class="self-start">
         <img
