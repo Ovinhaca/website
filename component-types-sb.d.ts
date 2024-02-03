@@ -103,6 +103,7 @@ export interface FeatureStoryblok {
   name?: string;
   copy?: string;
   link?: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
+  link_label?: string;
   _uid: string;
   component: "feature";
   [k: string]: any;

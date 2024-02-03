@@ -32,7 +32,7 @@ const props = defineProps<Props>();
         :to="`/${props.blok.link?.cached_url}`"
         class="text-amber-600 hover:text-amber-500 inline-flex items-center gap-x-1 text-base font-semibold mt-auto"
       >
-        Learn more
+        {{ props.blok.link_label }}
         <ArrowLongRightIcon class="h-6 w-6" aria-hidden="true" />
       </NuxtLink>
     </div>

@@ -172,7 +172,7 @@
       "name": "feature",
       "display_name": null,
       "created_at": "2023-09-17T21:43:45.850Z",
-      "updated_at": "2023-12-17T13:57:59.486Z",
+      "updated_at": "2024-02-03T18:28:40.402Z",
       "id": 4586471,
       "schema": {
         "image": {
@@ -192,6 +192,9 @@
         },
         "link": {
           "type": "multilink"
+        },
+        "link_label": {
+          "type": "text"
         }
       },
       "image": null,
